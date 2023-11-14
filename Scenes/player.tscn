@@ -43,7 +43,6 @@ texture = ExtResource("4_ywjq1")
 [node name="Arm_Left_Pivot" type="Node2D" parent="Sprites"]
 position = Vector2(-280, -40)
 rotation = 0.785398
-scale = Vector2(1, 1)
 
 [node name="Arm_Left" type="Sprite2D" parent="Sprites/Arm_Left_Pivot"]
 position = Vector2(-0.000244141, 160)
@@ -52,7 +51,6 @@ texture = ExtResource("3_iv6j5")
 [node name="Arm_Right_Pivot" type="Node2D" parent="Sprites"]
 position = Vector2(280, -40)
 rotation = -0.785398
-scale = Vector2(1, 1)
 
 [node name="Arm_Right" type="Sprite2D" parent="Sprites/Arm_Right_Pivot"]
 position = Vector2(0, 160)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct61iqun4p0xe"]
+
+[ext_resource type="Script" path="res://Gravity.cs" id="1_5bpso"]
+[ext_resource type="Script" path="res://GravityRange.cs" id="2_s1iff"]
+
+[node name="Gravity_Object" type="Node2D"]
+script = ExtResource("1_5bpso")
+outerRadius = 300.0
+gravityRangeResolution = 20
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(92.7051, -285.317, 176.336, -242.705, 242.705, -176.336, 285.317, -92.7051, 300, 2.28882e-05, 285.317, 92.7051, 242.705, 176.336, 176.335, 242.705, 92.705, 285.317, -5.34058e-05, 300, -92.7051, 285.317, -176.336, 242.705, -242.705, 176.335, -285.317, 92.705, -300, -8.39233e-05, -285.317, -92.7051, -242.705, -176.336, -176.335, -242.705, -92.7049, -285.317, 0.0001297, -300, 92.7051, -285.317)
+width = 3.0
+default_color = Color(1, 1, 1, 0.392157)
+script = ExtResource("2_s1iff")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b177xmaerkrjn"]
+
+[ext_resource type="PackedScene" uid="uid://ct61iqun4p0xe" path="res://Scenes/gravity_object.tscn" id="1_bcjnu"]
+[ext_resource type="Texture2D" uid="uid://pxk8q3mpetto" path="res://Placeholder/Circle.png" id="2_4gg1h"]
+
+[node name="Asteroid" type="Node2D"]
+
+[node name="Gravity_Object" parent="." instance=ExtResource("1_bcjnu")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_4gg1h")

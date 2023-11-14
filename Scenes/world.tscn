@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cegsv48o1taf2"]
+
+[ext_resource type="PackedScene" uid="uid://b7l0nx2rtspk1" path="res://Scenes/player.tscn" id="1_wwqj1"]
+[ext_resource type="PackedScene" uid="uid://b177xmaerkrjn" path="res://Scenes/asteroid.tscn" id="2_qliik"]
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_wwqj1")]
+position = Vector2(-3, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Asteroid" parent="." instance=ExtResource("2_qliik")]
+position = Vector2(-366, -216)

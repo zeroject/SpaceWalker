@@ -1,69 +1,76 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7l0nx2rtspk1"]
+[gd_scene load_steps=8 format=3 uid="uid://b7l0nx2rtspk1"]
 
-[ext_resource type="Texture2D" uid="uid://oe1j1m6y2qcg" path="res://Sprites/Astronaut/Head.png" id="1_vbiif"]
-[ext_resource type="Texture2D" uid="uid://b0nrao3shcu5b" path="res://Sprites/Astronaut/Body.png" id="2_6l588"]
-[ext_resource type="Texture2D" uid="uid://5dtvfq6ogl04" path="res://Sprites/Astronaut/Arm.png" id="3_iv6j5"]
-[ext_resource type="Texture2D" uid="uid://bisdl7fbl27d1" path="res://Sprites/Astronaut/Connector.png" id="3_pt00x"]
-[ext_resource type="Texture2D" uid="uid://b3cvr1jx7p1vm" path="res://Sprites/Astronaut/Foot.png" id="4_1a8m8"]
-[ext_resource type="Texture2D" uid="uid://dtapmssyp6naj" path="res://Sprites/Astronaut/Belt.png" id="4_ywjq1"]
+[ext_resource type="Texture2D" uid="uid://crvdcd1mq6ifa" path="res://Sprites/Astronaut 2/Head.png" id="1_jiawd"]
+[ext_resource type="Texture2D" uid="uid://c5xwp55sahkru" path="res://Sprites/Astronaut 2/Body.png" id="2_m5ynu"]
+[ext_resource type="Texture2D" uid="uid://dti64inpyr6xp" path="res://Sprites/Astronaut 2/Shoulder.png" id="3_pcac7"]
+[ext_resource type="Texture2D" uid="uid://bj473nmbhj2do" path="res://Sprites/Astronaut 2/Arm.png" id="4_3pqu5"]
+[ext_resource type="Texture2D" uid="uid://cnvv36ofj5mmd" path="res://Sprites/Astronaut 2/Foot.png" id="5_6sfdn"]
+[ext_resource type="Script" path="res://GravitySubject.cs" id="6_b0ech"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qj864"]
+radius = 42.0
+height = 150.0
+
+[node name="Player RB" type="RigidBody2D"]
+gravity_scale = 0.0
+continuous_cd = 2
+linear_velocity = Vector2(0, -150)
 
 [node name="Sprites" type="Node2D" parent="."]
-scale = Vector2(0.06, 0.06)
+scale = Vector2(0.1, 0.1)
 
 [node name="Head" type="Sprite2D" parent="Sprites"]
 z_index = 5
-position = Vector2(0, -500)
-texture = ExtResource("1_vbiif")
+position = Vector2(0, -440)
+texture = ExtResource("1_jiawd")
 
 [node name="Body" type="Sprite2D" parent="Sprites"]
-z_index = 3
-position = Vector2(0, 160)
-texture = ExtResource("2_6l588")
+position = Vector2(0, 100)
+texture = ExtResource("2_m5ynu")
 
-[node name="Connector_Left" type="Sprite2D" parent="Sprites/Body"]
-z_index = 1
-position = Vector2(-220, -165)
-rotation = 0.174533
-texture = ExtResource("3_pt00x")
+[node name="Shoulder_Left" type="Sprite2D" parent="Sprites/Body"]
+z_index = 2
+position = Vector2(-300, -135)
+texture = ExtResource("3_pcac7")
 
-[node name="Connector_Right" type="Sprite2D" parent="Sprites/Body"]
-z_index = 1
-position = Vector2(220, -160)
-rotation = -0.174533
-texture = ExtResource("3_pt00x")
+[node name="Arm_Left_Pivot" type="Node2D" parent="Sprites/Body/Shoulder_Left"]
+scale = Vector2(1, 1)
 
-[node name="Belt" type="Sprite2D" parent="Sprites/Body"]
-z_index = 1
-position = Vector2(0, 140)
-rotation = 1.5708
-texture = ExtResource("4_ywjq1")
+[node name="Arm_Left" type="Sprite2D" parent="Sprites/Body/Shoulder_Left/Arm_Left_Pivot"]
+z_index = -1
+position = Vector2(0, 170)
+texture = ExtResource("4_3pqu5")
 
-[node name="Arm_Left_Pivot" type="Node2D" parent="Sprites"]
-position = Vector2(-280, -40)
-rotation = 0.785398
+[node name="Shoulder_Right" type="Sprite2D" parent="Sprites/Body"]
+z_index = 2
+position = Vector2(300, -135)
+texture = ExtResource("3_pcac7")
 
-[node name="Arm_Left" type="Sprite2D" parent="Sprites/Arm_Left_Pivot"]
-position = Vector2(-0.000244141, 160)
-texture = ExtResource("3_iv6j5")
+[node name="Arm_Right_Pivot" type="Node2D" parent="Sprites/Body/Shoulder_Right"]
+scale = Vector2(1, 1)
 
-[node name="Arm_Right_Pivot" type="Node2D" parent="Sprites"]
-position = Vector2(280, -40)
-rotation = -0.785398
-
-[node name="Arm_Right" type="Sprite2D" parent="Sprites/Arm_Right_Pivot"]
-position = Vector2(0, 160)
-texture = ExtResource("3_iv6j5")
+[node name="Arm_Right" type="Sprite2D" parent="Sprites/Body/Shoulder_Right/Arm_Right_Pivot"]
+z_index = -1
+position = Vector2(0, 170)
+scale = Vector2(1, 1)
+texture = ExtResource("4_3pqu5")
 
 [node name="Foot_Left" type="Sprite2D" parent="Sprites"]
 z_index = 5
-position = Vector2(-240, 600)
+position = Vector2(-250, 515)
 rotation = -0.349066
-texture = ExtResource("4_1a8m8")
+texture = ExtResource("5_6sfdn")
 
 [node name="Foot_Right" type="Sprite2D" parent="Sprites"]
 z_index = 5
-position = Vector2(240, 600)
+position = Vector2(250, 515)
 rotation = 0.349066
-texture = ExtResource("4_1a8m8")
+texture = ExtResource("5_6sfdn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 10
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_qj864")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("6_b0ech")

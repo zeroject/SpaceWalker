@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ct61iqun4p0xe"]
+[gd_scene load_steps=4 format=3 uid="uid://ct61iqun4p0xe"]
 
 [ext_resource type="Script" path="res://Gravity.cs" id="1_5bpso"]
 [ext_resource type="Script" path="res://GravityRange.cs" id="2_s1iff"]
 
+[sub_resource type="Curve" id="Curve_6fnll"]
+_data = [Vector2(0, 1), 0.0, -1.91579, 0, 0, Vector2(0.35, 0.4), -1.15409, -1.15409, 0, 0, Vector2(1, 0), -0.266082, 0.0, 0, 0]
+point_count = 3
+
 [node name="Gravity_Object" type="Node2D"]
 script = ExtResource("1_5bpso")
 outerRadius = 300.0
+gravityCurve = SubResource("Curve_6fnll")
 gravityRangeResolution = 20
 
 [node name="Line2D" type="Line2D" parent="."]

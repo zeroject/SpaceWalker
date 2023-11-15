@@ -1,22 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b177xmaerkrjn"]
+[gd_scene load_steps=2 format=3 uid="uid://b177xmaerkrjn"]
 
-[ext_resource type="PackedScene" uid="uid://ct61iqun4p0xe" path="res://Scenes/gravity_object.tscn" id="1_bcjnu"]
 [ext_resource type="Texture2D" uid="uid://pxk8q3mpetto" path="res://Placeholder/Circle.png" id="2_4gg1h"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tm2tw"]
-radius = 127.004
 
 [node name="Asteroid" type="Node2D"]
 
-[node name="Gravity_Object" parent="." instance=ExtResource("1_bcjnu")]
-outerRadius = 600.0
-gravityForce = 2000.0
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_4gg1h")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("CircleShape2D_tm2tw")

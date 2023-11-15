@@ -20,6 +20,8 @@ public partial class Gravity : Node2D
 		//Important, do not remove! Code goes below this check!
 		if (Engine.IsEditorHint())
 			return;
+
+		GravityRegistry.AddGravityEffector(this);
 	}
 
 	public override void _Process(double delta)
@@ -35,9 +37,14 @@ public partial class Gravity : Node2D
 			if (subject.block)
 				return;
 			
-			if (distance > outerRadius)
+			if (distance > outerRadius) {
+				if (subject.currentEffector == this) //Clear effector when leaving
+					subject.SetEffector(null);
 				return;
+			}
 			
+			subject.SetEffector(this);
+
 			float normalizedDistance = InterpolationUtility.InverseLerp(innerRadius, outerRadius, distance);
 			float distanceMultiplier = gravityCurve.Sample(normalizedDistance);
 			float calculatedForce = gravityForce * distanceMultiplier;

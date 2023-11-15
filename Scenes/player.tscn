@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7l0nx2rtspk1"]
+[gd_scene load_steps=9 format=3 uid="uid://b7l0nx2rtspk1"]
 
+[ext_resource type="Script" path="res://Player.cs" id="1_01lgl"]
 [ext_resource type="Texture2D" uid="uid://crvdcd1mq6ifa" path="res://Sprites/Astronaut 2/Head.png" id="1_jiawd"]
 [ext_resource type="Texture2D" uid="uid://c5xwp55sahkru" path="res://Sprites/Astronaut 2/Body.png" id="2_m5ynu"]
 [ext_resource type="Texture2D" uid="uid://dti64inpyr6xp" path="res://Sprites/Astronaut 2/Shoulder.png" id="3_pcac7"]
@@ -7,20 +8,26 @@
 [ext_resource type="Texture2D" uid="uid://cnvv36ofj5mmd" path="res://Sprites/Astronaut 2/Foot.png" id="5_6sfdn"]
 [ext_resource type="Script" path="res://GravitySubject.cs" id="6_b0ech"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qj864"]
-radius = 42.0
-height = 150.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_1sqj2"]
+radius = 67.0
 
-[node name="Player RB" type="RigidBody2D"]
+[node name="Player RB" type="RigidBody2D" node_paths=PackedStringArray("gravitySubject", "standStillTimer")]
+collision_mask = 2
 gravity_scale = 0.0
 continuous_cd = 2
-linear_velocity = Vector2(0, -150)
+max_contacts_reported = 5
+contact_monitor = true
+lock_rotation = true
+script = ExtResource("1_01lgl")
+bounciness = 0.5
+gravitySubject = NodePath("GravitySubject")
+standStillTimer = NodePath("Timer")
 
 [node name="Sprites" type="Node2D" parent="."]
 scale = Vector2(0.1, 0.1)
 
 [node name="Head" type="Sprite2D" parent="Sprites"]
-z_index = 5
+z_index = 10
 position = Vector2(0, -440)
 texture = ExtResource("1_jiawd")
 
@@ -34,7 +41,6 @@ position = Vector2(-300, -135)
 texture = ExtResource("3_pcac7")
 
 [node name="Arm_Left_Pivot" type="Node2D" parent="Sprites/Body/Shoulder_Left"]
-scale = Vector2(1, 1)
 
 [node name="Arm_Left" type="Sprite2D" parent="Sprites/Body/Shoulder_Left/Arm_Left_Pivot"]
 z_index = -1
@@ -47,12 +53,10 @@ position = Vector2(300, -135)
 texture = ExtResource("3_pcac7")
 
 [node name="Arm_Right_Pivot" type="Node2D" parent="Sprites/Body/Shoulder_Right"]
-scale = Vector2(1, 1)
 
 [node name="Arm_Right" type="Sprite2D" parent="Sprites/Body/Shoulder_Right/Arm_Right_Pivot"]
 z_index = -1
 position = Vector2(0, 170)
-scale = Vector2(1, 1)
 texture = ExtResource("4_3pqu5")
 
 [node name="Foot_Left" type="Sprite2D" parent="Sprites"]
@@ -70,7 +74,11 @@ texture = ExtResource("5_6sfdn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 10
 position = Vector2(0, -12)
-shape = SubResource("CapsuleShape2D_qj864")
+shape = SubResource("CircleShape2D_1sqj2")
 
-[node name="Node" type="Node" parent="."]
+[node name="GravitySubject" type="Node" parent="."]
 script = ExtResource("6_b0ech")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true

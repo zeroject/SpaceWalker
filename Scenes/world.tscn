@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cegsv48o1taf2"]
+[gd_scene load_steps=5 format=3 uid="uid://cegsv48o1taf2"]
 
 [ext_resource type="PackedScene" uid="uid://b7l0nx2rtspk1" path="res://Scenes/player.tscn" id="1_wwqj1"]
+[ext_resource type="Script" path="res://CameraFollow.cs" id="2_hstal"]
 [ext_resource type="PackedScene" uid="uid://b177xmaerkrjn" path="res://Scenes/asteroid.tscn" id="2_qliik"]
 [ext_resource type="PackedScene" uid="uid://ct61iqun4p0xe" path="res://Scenes/gravity_object.tscn" id="3_k66ly"]
 
@@ -9,7 +10,9 @@
 [node name="Player" parent="." instance=ExtResource("1_wwqj1")]
 linear_velocity = Vector2(50, 0)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("toFollow")]
+script = ExtResource("2_hstal")
+toFollow = NodePath("../Player")
 
 [node name="Environment" type="Node2D" parent="."]
 
@@ -17,11 +20,39 @@ linear_velocity = Vector2(50, 0)
 position = Vector2(0, 400)
 
 [node name="Gravity_Object" parent="Environment/Asteroid" instance=ExtResource("3_k66ly")]
-outerRadius = 500.0
-gravityForce = 600.0
+outerRadius = 700.0
+innerRadius = 160.0
+gravityForce = 2000.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Environment/Asteroid"]
 collision_layer = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/Asteroid/StaticBody2D"]
+polygon = PackedVector2Array(96, -125, 141, -65, 158, 0, 138, 73, 96, 123, 20, 156, -65, 142, -123, 96, -157, 22, -146, -58, -111, -114, -59, -146, 17, -156)
+
+[node name="Asteroid2" parent="Environment" instance=ExtResource("2_qliik")]
+position = Vector2(807, -604)
+
+[node name="Gravity_Object" parent="Environment/Asteroid2" instance=ExtResource("3_k66ly")]
+outerRadius = 500.0
+innerRadius = 160.0
+gravityForce = 1400.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Asteroid2"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/Asteroid2/StaticBody2D"]
+polygon = PackedVector2Array(96, -125, 141, -65, 158, 0, 138, 73, 96, 123, 20, 156, -65, 142, -123, 96, -157, 22, -146, -58, -111, -114, -59, -146, 17, -156)
+
+[node name="Asteroid3" parent="Environment" instance=ExtResource("2_qliik")]
+position = Vector2(-397, -1148)
+
+[node name="Gravity_Object" parent="Environment/Asteroid3" instance=ExtResource("3_k66ly")]
+innerRadius = 160.0
+gravityForce = 1000.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Environment/Asteroid3"]
+collision_layer = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Environment/Asteroid3/StaticBody2D"]
 polygon = PackedVector2Array(96, -125, 141, -65, 158, 0, 138, 73, 96, 123, 20, 156, -65, 142, -123, 96, -157, 22, -146, -58, -111, -114, -59, -146, 17, -156)

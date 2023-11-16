@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct61iqun4p0xe"]
+[gd_scene load_steps=5 format=3 uid="uid://ct61iqun4p0xe"]
 
 [ext_resource type="Script" path="res://Gravity.cs" id="1_5bpso"]
 [ext_resource type="Script" path="res://GravityRange.cs" id="2_s1iff"]
+[ext_resource type="Script" path="res://InnerGravityRange.cs" id="3_cryfe"]
 
 [sub_resource type="Curve" id="Curve_6fnll"]
 _data = [Vector2(0, 1), 0.0, -1.91579, 0, 0, Vector2(0.35, 0.4), -1.15409, -1.15409, 0, 0, Vector2(1, 0), -0.266082, 0.0, 0, 0]
@@ -9,12 +10,20 @@ point_count = 3
 
 [node name="Gravity_Object" type="Node2D"]
 script = ExtResource("1_5bpso")
-outerRadius = 300.0
+outerRadius = 400.0
+innerRadius = 200.0
 gravityCurve = SubResource("Curve_6fnll")
 gravityRangeResolution = 20
 
 [node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(92.7051, -285.317, 176.336, -242.705, 242.705, -176.336, 285.317, -92.7051, 300, 2.28882e-05, 285.317, 92.7051, 242.705, 176.336, 176.335, 242.705, 92.705, 285.317, -5.34058e-05, 300, -92.7051, 285.317, -176.336, 242.705, -242.705, 176.335, -285.317, 92.705, -300, -8.39233e-05, -285.317, -92.7051, -242.705, -176.336, -176.335, -242.705, -92.7049, -285.317, 0.0001297, -300, 92.7051, -285.317)
-width = 3.0
-default_color = Color(1, 1, 1, 0.392157)
+points = PackedVector2Array(123.607, -380.423, 235.114, -323.607, 323.607, -235.114, 380.423, -123.607, 400, 3.8147e-05, 380.423, 123.607, 323.607, 235.114, 235.114, 323.607, 123.607, 380.423, -9.15527e-05, 400, -123.607, 380.422, -235.114, 323.607, -323.607, 235.114, -380.423, 123.607, -400, -0.000137329, -380.422, -123.607, -323.607, -235.114, -235.114, -323.607, -123.607, -380.423, 0.000167847, -400, 123.607, -380.422)
+width = 5.0
+default_color = Color(1, 1, 1, 0.588235)
 script = ExtResource("2_s1iff")
+
+[node name="InnerLine2D" type="Line2D" parent="."]
+z_index = 100
+points = PackedVector2Array(61.8034, -190.211, 117.557, -161.803, 161.803, -117.557, 190.211, -61.8034, 200, 1.90735e-05, 190.211, 61.8034, 161.803, 117.557, 117.557, 161.803, 61.8033, 190.211, -4.57764e-05, 200, -61.8034, 190.211, -117.557, 161.803, -161.803, 117.557, -190.211, 61.8033, -200, -6.86646e-05, -190.211, -61.8034, -161.803, -117.557, -117.557, -161.803, -61.8033, -190.211, 8.39233e-05, -200, 61.8035, -190.211)
+width = 5.0
+default_color = Color(1, 1, 0.196078, 1)
+script = ExtResource("3_cryfe")

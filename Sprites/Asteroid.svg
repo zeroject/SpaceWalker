@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="500mm"
+   height="500mm"
+   viewBox="0 0 500 500"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="Asteroid.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:snap-object-midpoints="true"
+     inkscape:zoom="1.0998546"
+     inkscape:cx="233.21264"
+     inkscape:cy="194.57117"
+     inkscape:window-width="2560"
+     inkscape:window-height="1377"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#28170b;stroke:none;stroke-width:0.235703;stroke-dashoffset:73.5682"
+       id="circle1502"
+       cx="17.787956"
+       cy="23.935497"
+       r="15"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#28170b;stroke:none;stroke-width:0.392838;stroke-dashoffset:73.5682"
+       id="circle1434"
+       cx="27.381439"
+       cy="70.247429"
+       r="25"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#28170b;stroke:none;stroke-width:0.392838;stroke-dashoffset:73.5682"
+       id="circle1432"
+       cx="41.499996"
+       cy="85.896912"
+       r="25"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#28170b;stroke:none;stroke-width:0.392838;stroke-dashoffset:73.5682"
+       id="circle1430"
+       cx="77.731956"
+       cy="32.314434"
+       r="25"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#28170b;stroke:none;stroke-width:0.785676;stroke-dashoffset:73.5682"
+       id="path1274"
+       cx="50"
+       cy="50"
+       r="50"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#502d16;stroke:none;stroke-width:0.707109;stroke-dashoffset:73.5682"
+       id="circle1356"
+       cx="50"
+       cy="50"
+       r="45"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#28170b;stroke:none;stroke-width:0.31427;stroke-dashoffset:73.5682"
+       id="circle1436"
+       cx="67.288651"
+       cy="55.211342"
+       r="20"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#784421;stroke:none;stroke-width:0.235703;stroke-dashoffset:73.5682"
+       id="circle1438"
+       cx="67.288651"
+       cy="55.211342"
+       r="15"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#28170b;stroke:none;stroke-width:0.157135;stroke-dashoffset:73.5682"
+       id="circle1494"
+       cx="51.034035"
+       cy="20.433445"
+       r="10"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#784421;stroke:none;stroke-width:0.117851;stroke-dashoffset:73.5682"
+       id="circle1496"
+       cx="51.034035"
+       cy="20.433445"
+       r="7.5"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#28170b;stroke:none;stroke-width:0.117851;stroke-dashoffset:73.5682"
+       id="circle1498"
+       cx="35.062557"
+       cy="41.027405"
+       r="7.5"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+    <circle
+       style="fill:#784421;stroke:none;stroke-width:0.0883883;stroke-dashoffset:73.5682"
+       id="circle1500"
+       cx="35.062557"
+       cy="41.027405"
+       r="5.625"
+       inkscape:export-filename="C:\Users\marcu\Desktop\Godot Projects\4.1.1\SpaceWalker\Sprites\Asteroid1.png"
+       inkscape:export-xdpi="500"
+       inkscape:export-ydpi="500" />
+  </g>
+</svg>

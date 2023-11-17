@@ -1,8 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b177xmaerkrjn"]
 
-[ext_resource type="Texture2D" uid="uid://pxk8q3mpetto" path="res://Placeholder/Circle.png" id="2_4gg1h"]
+[ext_resource type="Script" path="res://Asteroid.cs" id="1_2o731"]
 
 [node name="Asteroid" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_4gg1h")
+script = ExtResource("1_2o731")

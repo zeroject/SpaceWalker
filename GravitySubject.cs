@@ -18,6 +18,7 @@ public partial class GravitySubject : Node
 		rb = GetParent<RigidBody2D>();
 
 		GravityRegistry.AddGravitySubject(this);
+		GD.Print("Added new gravity subject!");
 	}
 
 

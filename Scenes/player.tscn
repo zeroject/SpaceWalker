@@ -23,8 +23,7 @@ bounciness = 0.5
 gravitySubject = NodePath("GravitySubject")
 standStillVelocity = 150.0
 standStillTimer = NodePath("Timer")
-standStillTime = 0.5
-standStileDistance = 14.0
+standStileDistance = 10.0
 
 [node name="Sprites" type="Node2D" parent="."]
 scale = Vector2(0.1, 0.1)
@@ -82,5 +81,5 @@ shape = SubResource("CircleShape2D_1sqj2")
 script = ExtResource("6_b0ech")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.5
 autostart = true
